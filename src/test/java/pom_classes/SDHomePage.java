@@ -15,11 +15,6 @@ public class SDHomePage {
     protected By backpackSelect=By.cssSelector(".btn_secondary.btn_inventory");
     protected By shopingcart=By.cssSelector("#shopping_cart_container");
 
-// String naziv="Sauce Labs Backpack";
-// String cena="$29.99";
-
-//   String naziv1=driver.findElement(By.cssSelector(".inventory_item:nth-child(1)>div>a>div")).getText();
-//   String cena1=driver.findElement(By.cssSelector(".inventory_item:nth-child(1) .inventory_item_price")).getText();
 
     public void checkLogin(String message){
         Assert.assertEquals(driver.findElement(confirm).getText(),message);

@@ -9,7 +9,6 @@ public class SDCartPage {
     public SDCartPage(WebDriver driver){
         this.driver=driver;
     }
-    //SDHomePage sdhp;
 
     protected By yourCart=By.cssSelector(".subheader");
     protected By itemName=By.cssSelector(".inventory_item_name");
