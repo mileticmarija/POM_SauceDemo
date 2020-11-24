@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sauce Login Tests" thread-count="1">
+    <test name="Standard Login">
+        <classes>
+            <class name="test_classes.SDLoginTests">
+                <methods>
+                     <exclude name="loginLockedOutUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LockedOutUser login">
+        <classes>
+            <class name="test_classes.SDLoginTests">
+                <methods>
+                    <exclude name="loginStandard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

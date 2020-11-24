@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sauce Buy Test">
+    <parameter name="user" value="standard_user"/>
+    <parameter name="pass" value="secret_sauce"/>
+    <parameter name="checkLogin" value="Products"/>
+    <parameter name="checkPageOne" value="Checkout: Your Information"/>
+    <parameter name="name" value="Ime"/>
+    <parameter name="surname" value="Prezime"/>
+    <parameter name="zip" value="11000"/>
+    <parameter name="checkPageTwo" value="Checkout: Overview"/>
+    <test name="buy">
+        <classes>
+            <class name="test_classes.SDBuyTest">
+            </class>
+        </classes>
+    </test>
+</suite>
