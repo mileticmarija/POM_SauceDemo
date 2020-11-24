@@ -23,11 +23,10 @@ public class SDCartPage {
 
 
     public void checkCartItem(String naziv, String cena){
-        //sdhp=new SDHomePage(driver);
-        String cenaKorpa=driver.findElement(itemPrice).getText();
-        //if (driver.findElement(itemName).getText().equalsIgnoreCase(sdhp.naziv1) && driver.findElement(itemPrice).getText().equalsIgnoreCase(sdhp.cena1));
+
         Assert.assertEquals(driver.findElement(itemName).getText(),naziv);
-        Assert.assertEquals(Double.valueOf(cena.substring(1,6)),Double.valueOf(cenaKorpa));
+        Assert.assertEquals(Double.valueOf(driver.findElement(itemPrice).getText()),Double.valueOf(cena.substring(1,6)));
+
     }
     public void checkout(){
         driver.findElement(checkoutBtn).click();

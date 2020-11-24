@@ -31,5 +31,13 @@ public class SDHomePage {
     public void enterShopingCart(){
         driver.findElement(shopingcart).click();
     }
+    public String getNaziv(){
+        String naziv=driver.findElement(By.cssSelector(".inventory_item:nth-child(1)>div>a>div")).getText();
+        return naziv;
+    }
+    public String getCena(){
+        String cena=driver.findElement(By.cssSelector(".inventory_item:nth-child(1) .inventory_item_price")).getText();
+        return cena;
+    }
 
 }

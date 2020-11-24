@@ -45,9 +45,14 @@ public class SDBuyTest {
         sdhp.checkLogin(checkLogin);
 
         sdhp.selectBackpack();
+
+        String naziv=sdhp.getNaziv();
+        String cena=sdhp.getCena();
+
         sdhp.enterShopingCart();
         sdcp.checkCart();
-        sdcp.checkCartItem("Sauce Labs Backpack","$29.99");
+        sdcp.checkCartItem(naziv,cena);
+
         sdcp.checkout();
         sdcop.checkPageOne(checkPageOne);
         sdcop.continuePurchase(name,surname,zip);
