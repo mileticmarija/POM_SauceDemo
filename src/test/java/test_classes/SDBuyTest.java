@@ -60,7 +60,6 @@ public class SDBuyTest {
         sdctp.finishPurchase();
         sdccp.checkImg();
 
-
     }
     @AfterMethod
     public void tearDown(){
