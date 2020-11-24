@@ -24,8 +24,9 @@ public class SDBuyTest {
     SDCheckoutCompletePage sdccp;
 
     @BeforeMethod
-    public void setUp(){
-        driverManager= DriverManagerFactory.getDriverManager(DriverType.CHROME);
+    @Parameters("type")
+    public void setUp(String type){
+        driverManager= DriverManagerFactory.getDriverManager(type);
         driver=driverManager.getWebDriver();
         driver.get(URL);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -43,24 +44,20 @@ public class SDBuyTest {
 
         sdlp.login(user,pass);
         sdhp.checkLogin(checkLogin);
-
         sdhp.selectBackpack();
-
         String naziv=sdhp.getNaziv();
         String cena=sdhp.getCena();
-
         sdhp.enterShopingCart();
         sdcp.checkCart();
         sdcp.checkCartItem(naziv,cena);
-
         sdcp.checkout();
         sdcop.checkPageOne(checkPageOne);
         sdcop.continuePurchase(name,surname,zip);
         sdctp.checkPage(checkPageTwo);
         sdctp.finishPurchase();
         sdccp.checkImg();
-
     }
+
     @AfterMethod
     public void tearDown(){
         driverManager.quitDriver();

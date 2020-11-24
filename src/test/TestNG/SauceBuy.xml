@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Sauce Buy Test">
+<suite name="Sauce Buy Test" thread-count="2" parallel="tests">
+    <parameter name="type" value="CHROME"/>
     <parameter name="user" value="standard_user"/>
     <parameter name="pass" value="secret_sauce"/>
     <parameter name="checkLogin" value="Products"/>
@@ -9,10 +10,16 @@
     <parameter name="surname" value="Prezime"/>
     <parameter name="zip" value="11000"/>
     <parameter name="checkPageTwo" value="Checkout: Overview"/>
-    <test name="buy">
+
+    <test name="buy-Chrome">
         <classes>
-            <class name="test_classes.SDBuyTest">
-            </class>
+            <class name="test_classes.SDBuyTest"/>
+        </classes>
+    </test>
+    <test name="buy-Firefox">
+        <parameter name="type" value="FIREFOX"/>
+        <classes>
+            <class name="test_classes.SDBuyTest"/>
         </classes>
     </test>
 </suite>
