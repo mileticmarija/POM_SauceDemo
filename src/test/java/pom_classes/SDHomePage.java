@@ -14,7 +14,8 @@ public class SDHomePage {
     protected By backpackButton= By.cssSelector(".inventory_item:nth-child(1) .btn_primary.btn_inventory");
     protected By backpackSelect=By.cssSelector(".btn_secondary.btn_inventory");
     protected By shopingcart=By.cssSelector("#shopping_cart_container");
-
+    protected By naziv = By.cssSelector("div.inventory_item:nth-child(1)>div>a>.inventory_item_name");
+    protected By cena = By.cssSelector("div.inventory_item:nth-child(1)>div.pricebar>div");
 
     public void checkLogin(String message){
         Assert.assertEquals(driver.findElement(confirm).getText(),message);
@@ -27,12 +28,10 @@ public class SDHomePage {
         driver.findElement(shopingcart).click();
     }
     public String getNaziv(){
-        String naziv=driver.findElement(By.cssSelector(".inventory_item:nth-child(1)>div>a>div")).getText();
-        return naziv;
+        return driver.findElement(naziv).getText();
     }
     public String getCena(){
-        String cena=driver.findElement(By.cssSelector(".inventory_item:nth-child(1) .inventory_item_price")).getText();
-        return cena;
+        return driver.findElement(cena).getText();
     }
 
 }
